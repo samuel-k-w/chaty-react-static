@@ -17,7 +17,7 @@ import {
 
 const MessageInput = () => {
   return (
-    <div className="flex items-center p-2 border rounded-lg">
+    <div className="flex items-center md:p-2 border rounded-lg">
       <TooltipProvider>
         <Tooltip>
           <TooltipTrigger>
@@ -30,7 +30,8 @@ const MessageInput = () => {
           </TooltipContent>
         </Tooltip>
       </TooltipProvider>
-      <div className="flex items-center space-x-2">
+
+      <div className="flex flex-1 items-center space-x-2">
         <Input className="flex-1" placeholder="Type a message" type="text" />
       </div>
 
