@@ -3,7 +3,7 @@ import ChatList from "./components/ChatList";
 
 const ChatSidebar = () => {
   return (
-    <div>
+    <div className="space-y-4">
       <ChatHeader />
       <ChatList />
     </div>

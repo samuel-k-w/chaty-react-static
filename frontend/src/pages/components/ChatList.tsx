@@ -1,6 +1,6 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { ChevronDown, Video, MessageSquare } from "lucide-react";
 
 const chats = [
@@ -39,27 +39,128 @@ const chats = [
     img: "https://via.placeholder.com/40",
     status: "online",
   },
+  {
+    name: "Jessica Pearson",
+    message: "Have you finished the draft...",
+    date: "9/3/2020",
+    img: "https://via.placeholder.com/40",
+    status: "online",
+  },
+  {
+    name: "Jessica Pearson",
+    message: "Have you finished the draft...",
+    date: "9/3/2020",
+    img: "https://via.placeholder.com/40",
+    status: "online",
+  },
+  {
+    name: "Jessica Pearson",
+    message: "Have you finished the draft...",
+    date: "9/3/2020",
+    img: "https://via.placeholder.com/40",
+    status: "online",
+  },
+  {
+    name: "Jessica Pearson",
+    message: "Have you finished the draft...",
+    date: "9/3/2020",
+    img: "https://via.placeholder.com/40",
+    status: "online",
+  },
+  {
+    name: "Jessica Pearson",
+    message: "Have you finished the draft...",
+    date: "9/3/2020",
+    img: "https://via.placeholder.com/40",
+    status: "online",
+  },
+  {
+    name: "Jessica Pearson",
+    message: "Have you finished the draft...",
+    date: "9/3/2020",
+    img: "https://via.placeholder.com/40",
+    status: "online",
+  },
+  {
+    name: "Jessica Pearson",
+    message: "Have you finished the draft...",
+    date: "9/3/2020",
+    img: "https://via.placeholder.com/40",
+    status: "online",
+  },
+  {
+    name: "Jessica Pearson",
+    message: "Have you finished the draft...",
+    date: "9/3/2020",
+    img: "https://via.placeholder.com/40",
+    status: "online",
+  },
+  {
+    name: "Jessica Pearson",
+    message: "Have you finished the draft...",
+    date: "9/3/2020",
+    img: "https://via.placeholder.com/40",
+    status: "online",
+  },
+  {
+    name: "Jessica Pearson",
+    message: "Have you finished the draft...",
+    date: "9/3/2020",
+    img: "https://via.placeholder.com/40",
+    status: "online",
+  },
+  {
+    name: "Jessica Pearson",
+    message: "Have you finished the draft...",
+    date: "9/3/2020",
+    img: "https://via.placeholder.com/40",
+    status: "online",
+  },
+  {
+    name: "Jessica Pearson",
+    message: "Have you finished the draft...",
+    date: "9/3/2020",
+    img: "https://via.placeholder.com/40",
+    status: "online",
+  },
+  {
+    name: "Jessica Pearson",
+    message: "Have you finished the draft...",
+    date: "9/3/2020",
+    img: "https://via.placeholder.com/40",
+    status: "online",
+  },
+  {
+    name: "Jessica Pearson",
+    message: "Have you finished the draft...",
+    date: "9/3/2020",
+    img: "https://via.placeholder.com/40",
+    status: "online",
+  },
 ];
 
 export default function ChatList() {
   return (
-    <Card className="w-80 shadow-md rounded-lg p-4">
-      <div className="flex justify-between mb-4">
-        <Button variant="ghost" className="flex items-center gap-2">
-          <Video size={18} /> Meet Now <ChevronDown size={16} />
-        </Button>
-        <Button variant="ghost" className="flex items-center gap-2">
-          <MessageSquare size={18} /> New Chat <ChevronDown size={16} />
-        </Button>
-      </div>
-      <div className="text-gray-500 text-sm flex items-center justify-between mb-2">
-        RECENT CHATS <ChevronDown size={16} />
-      </div>
-      <div>
+    <Card className="w-full shadow-md rounded-lg">
+      <CardHeader>
+        <div className="flex justify-between">
+          <Button variant="ghost" className="flex items-center gap-2">
+            <Video size={18} /> Meet Now <ChevronDown size={10} />
+          </Button>
+          <Button variant="ghost" className="flex items-center gap-2">
+            <MessageSquare size={18} /> New Chat <ChevronDown size={16} />
+          </Button>
+        </div>
+        <div className="text-gray-500 flex items-center justify-between">
+          RECENT CHATS <ChevronDown size={16} />
+        </div>
+      </CardHeader>
+
+      <CardContent className="md:overflow-y-auto custom-scrollbar md:h-[250px]">
         {chats.map((chat, index) => (
           <div
             key={index}
-            className="flex items-center gap-3 py-2 border-b border-gray-100 last:border-none"
+            className="flex items-center gap-3 py-2 border-b border-secondary last:border-none"
           >
             <div className="relative">
               <Avatar>
@@ -74,14 +175,14 @@ export default function ChatList() {
             </div>
             <div className="flex-1">
               <p className="font-medium text-sm">{chat.name}</p>
-              <p className="text-gray-500 text-xs truncate w-40">
+              <p className="text-gray-500 text-xs truncate w-36">
                 {chat.message}
               </p>
             </div>
             <p className="text-gray-400 text-xs">{chat.date}</p>
           </div>
         ))}
-      </div>
+      </CardContent>
     </Card>
   );
 }
