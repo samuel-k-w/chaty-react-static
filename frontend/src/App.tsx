@@ -1,7 +1,12 @@
-import { Button } from "./components/ui/button";
+import Layout from "./layout/Layout";
+import { ThemeProvider } from "./providers/ThemeProvider";
 
 function App() {
-  return <Button>hello shadcn react+typecript starter template</Button>;
+  return (
+    <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+      <Layout />
+    </ThemeProvider>
+  );
 }
 
 export default App;
