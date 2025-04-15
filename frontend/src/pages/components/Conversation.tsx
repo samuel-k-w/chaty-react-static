@@ -1,6 +1,8 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Card, CardContent } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
+// import { useState } from "react";
+import { useLocation } from "react-router-dom";
 
 const messages = [
   {
@@ -68,10 +70,16 @@ const messages = [
   },
 ];
 
-export default function Conversation() {
+export default function Conversation({ chatId }: { chatId: string | null }) {
+  const location = useLocation();
+  const user = location.state?.user;
+
+  // const [id, setId] = useState(chat?.id);
+
   return (
     <Card className="w-full border rounded-lg shadow-md overflow-y-auto custom-scrollbar h-[480px]">
       <CardContent>
+        {chatId} {user?.id}
         {messages.map((msg) => (
           <div
             key={msg.id}

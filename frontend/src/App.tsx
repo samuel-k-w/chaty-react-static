@@ -1,10 +1,16 @@
-import Layout from "./layout/Layout";
+import { RouterProvider } from "react-router-dom";
 import { ThemeProvider } from "./providers/ThemeProvider";
+import router from "./routes/router";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+
+const client = new QueryClient();
 
 function App() {
   return (
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
-      <Layout />
+      <QueryClientProvider client={client}>
+        <RouterProvider router={router} />
+      </QueryClientProvider>
     </ThemeProvider>
   );
 }

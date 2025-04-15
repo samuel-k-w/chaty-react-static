@@ -1,15 +1,10 @@
-import Conversation from "./components/Conversation";
-import MessageInput from "./components/MessageInput";
-import OpenChatHeader from "./components/OpenChatHeader";
+import { useParams } from "react-router-dom";
+import ChatWindow from "./components/ChatWindow";
 
 const ChatPage = () => {
-  return (
-    <div className="space-y-2">
-      <OpenChatHeader />
-      <Conversation />
-      <MessageInput />
-    </div>
-  );
+  const { id } = useParams();
+
+  return <ChatWindow chatId={id || null} />;
 };
 
 export default ChatPage;

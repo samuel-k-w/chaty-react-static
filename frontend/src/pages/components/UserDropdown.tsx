@@ -4,7 +4,7 @@ import {
   ChevronsUpDown,
   CreditCard,
   LogOut,
-  Sparkles,
+  //   Sparkles,
 } from "lucide-react";
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -24,9 +24,9 @@ import { DarkMode } from "@/components/DarkMode";
 //   SidebarMenuItem,
 //   useSidebar,
 // } from "@/components/ui/sidebar";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 // import { User } from "@/types/auth";
-// import { useLogout } from "@/hooks/useAuth";
+import { useLogout } from "@/hooks/useAuth";
 
 export interface User {
   id: string;
@@ -49,8 +49,8 @@ const user: User = {
 // export function NavUser({ user }: { user: User }) {
 export function UserDropdown() {
   //   const { isMobile } = useSidebar();
-  //   const logout = useLogout();
-  //   const navigate = useNavigate();
+  const logout = useLogout();
+  const navigate = useNavigate();
 
   return (
     <DropdownMenu>
@@ -98,11 +98,9 @@ export function UserDropdown() {
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
-          <DropdownMenuItem
-          //   onClick={() => navigate("/account")}
-          >
+          <DropdownMenuItem onClick={() => navigate("/profile")}>
             <BadgeCheck />
-            Account
+            Profile
           </DropdownMenuItem>
           <DropdownMenuItem
           //   onClick={() => navigate("/billing")}
@@ -120,12 +118,11 @@ export function UserDropdown() {
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
         <DropdownMenuItem
-          //   onClick={() => logout.mutate()}
+          onClick={() => logout.mutate()}
           className="bg-red-600"
         >
           <LogOut />
-          Logout
-          {/* {logout.isPending ? "Logging Out" : "Log out"} */}
+          {logout.isPending ? "Logging Out" : "Log out"}
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
